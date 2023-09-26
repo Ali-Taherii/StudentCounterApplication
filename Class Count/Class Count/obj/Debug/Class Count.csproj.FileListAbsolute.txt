@@ -1,0 +1,10 @@
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\Class Count.exe.config
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\Class Count.exe
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\Class Count.pdb
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.AssemblyReference.cache
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class_Count.Form1.resources
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class_Count.Properties.Resources.resources
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.GenerateResource.cache
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.CoreCompileInputs.cache
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.exe
+C:\Users\nf\Desktop\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.pdb
