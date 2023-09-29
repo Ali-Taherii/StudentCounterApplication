@@ -37,7 +37,7 @@
             this.btnIncrease = new System.Windows.Forms.Button();
             this.txtSessions = new System.Windows.Forms.TextBox();
             this.lblSessions = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
             this.txtPayment = new System.Windows.Forms.TextBox();
             this.lblPayment = new System.Windows.Forms.Label();
             this.grpDetials.SuspendLayout();
@@ -87,10 +87,9 @@
             this.grpDetials.Controls.Add(this.btnIncrease);
             this.grpDetials.Controls.Add(this.txtSessions);
             this.grpDetials.Controls.Add(this.lblSessions);
-            this.grpDetials.Controls.Add(this.button1);
+            this.grpDetials.Controls.Add(this.btnChange);
             this.grpDetials.Controls.Add(this.txtPayment);
             this.grpDetials.Controls.Add(this.lblPayment);
-            this.grpDetials.Enabled = false;
             this.grpDetials.Location = new System.Drawing.Point(309, 78);
             this.grpDetials.Name = "grpDetials";
             this.grpDetials.Size = new System.Drawing.Size(477, 220);
@@ -106,7 +105,7 @@
             this.btnDecrease.TabIndex = 6;
             this.btnDecrease.Text = "-";
             this.btnDecrease.UseVisualStyleBackColor = true;
-            this.btnDecrease.Click += new System.EventHandler(this.button2_Click);
+            this.btnDecrease.Click += new System.EventHandler(this.btnDecrease_Click);
             // 
             // btnIncrease
             // 
@@ -116,6 +115,7 @@
             this.btnIncrease.TabIndex = 5;
             this.btnIncrease.Text = "+";
             this.btnIncrease.UseVisualStyleBackColor = true;
+            this.btnIncrease.Click += new System.EventHandler(this.btnIncrease_Click);
             // 
             // txtSessions
             // 
@@ -133,14 +133,14 @@
             this.lblSessions.TabIndex = 3;
             this.lblSessions.Text = "Remaining \r\nSessions";
             // 
-            // button1
+            // btnChange
             // 
-            this.button1.Location = new System.Drawing.Point(341, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Change";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnChange.Location = new System.Drawing.Point(341, 41);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(106, 39);
+            this.btnChange.TabIndex = 2;
+            this.btnChange.Text = "Change";
+            this.btnChange.UseVisualStyleBackColor = true;
             // 
             // txtPayment
             // 
@@ -187,7 +187,7 @@
         private System.Windows.Forms.Button btnIncrease;
         private System.Windows.Forms.TextBox txtSessions;
         private System.Windows.Forms.Label lblSessions;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.TextBox txtPayment;
         private System.Windows.Forms.Label lblPayment;
         private System.Windows.Forms.Button btnDecrease;

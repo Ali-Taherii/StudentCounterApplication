@@ -17,15 +17,34 @@ namespace Class_Count
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDecrease_Click(object sender, EventArgs e)
         {
+            try
+            {
+                txtSessions.Text = (Convert.ToInt32(txtSessions.Text) - 1).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("The format is not correct");
+            }
+        }
 
+        private void btnIncrease_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSessions.Text = (Convert.ToInt32(txtSessions.Text) + 1).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("The format is not correct");
+            }
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             frmStudentDetails frmStudentDetails = new frmStudentDetails();
-            frmStudentDetails.ShowDialog();
         }
+
     }
 }
