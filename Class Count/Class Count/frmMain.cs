@@ -21,5 +21,11 @@ namespace Class_Count
         {
 
         }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            frmStudentDetails frmStudentDetails = new frmStudentDetails();
+            frmStudentDetails.ShowDialog();
+        }
     }
 }

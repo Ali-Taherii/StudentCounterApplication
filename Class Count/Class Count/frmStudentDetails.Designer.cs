@@ -36,6 +36,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.numSessions = new System.Windows.Forms.NumericUpDown();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numSessions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +105,32 @@
             this.numSessions.Size = new System.Drawing.Size(188, 29);
             this.numSessions.TabIndex = 7;
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(54, 317);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(309, 40);
+            this.btnRegister.TabIndex = 8;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(54, 274);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(309, 25);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "___________________________";
+            // 
             // frmStudentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 317);
+            this.ClientSize = new System.Drawing.Size(424, 375);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.numSessions);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
@@ -134,5 +157,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numSessions;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -33,13 +33,13 @@
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnRemoveStudent = new System.Windows.Forms.Button();
             this.grpDetials = new System.Windows.Forms.GroupBox();
-            this.lblPayment = new System.Windows.Forms.Label();
-            this.txtPayment = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblSessions = new System.Windows.Forms.Label();
-            this.txtSessions = new System.Windows.Forms.TextBox();
-            this.btnIncrease = new System.Windows.Forms.Button();
             this.btnDecrease = new System.Windows.Forms.Button();
+            this.btnIncrease = new System.Windows.Forms.Button();
+            this.txtSessions = new System.Windows.Forms.TextBox();
+            this.lblSessions = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtPayment = new System.Windows.Forms.TextBox();
+            this.lblPayment = new System.Windows.Forms.Label();
             this.grpDetials.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,7 @@
             this.btnAddStudent.TabIndex = 2;
             this.btnAddStudent.Text = "Add";
             this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // btnRemoveStudent
             // 
@@ -97,56 +98,6 @@
             this.grpDetials.TabStop = false;
             this.grpDetials.Text = "Details";
             // 
-            // lblPayment
-            // 
-            this.lblPayment.AutoSize = true;
-            this.lblPayment.Location = new System.Drawing.Point(21, 48);
-            this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Size = new System.Drawing.Size(131, 25);
-            this.lblPayment.TabIndex = 0;
-            this.lblPayment.Text = "Last Payment";
-            // 
-            // txtPayment
-            // 
-            this.txtPayment.Location = new System.Drawing.Point(158, 45);
-            this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(168, 29);
-            this.txtPayment.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(341, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Change";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lblSessions
-            // 
-            this.lblSessions.AutoSize = true;
-            this.lblSessions.Location = new System.Drawing.Point(21, 124);
-            this.lblSessions.Name = "lblSessions";
-            this.lblSessions.Size = new System.Drawing.Size(109, 50);
-            this.lblSessions.TabIndex = 3;
-            this.lblSessions.Text = "Remaining \r\nSessions";
-            // 
-            // txtSessions
-            // 
-            this.txtSessions.Location = new System.Drawing.Point(158, 134);
-            this.txtSessions.Name = "txtSessions";
-            this.txtSessions.Size = new System.Drawing.Size(146, 29);
-            this.txtSessions.TabIndex = 4;
-            // 
-            // btnIncrease
-            // 
-            this.btnIncrease.Location = new System.Drawing.Point(323, 135);
-            this.btnIncrease.Name = "btnIncrease";
-            this.btnIncrease.Size = new System.Drawing.Size(59, 29);
-            this.btnIncrease.TabIndex = 5;
-            this.btnIncrease.Text = "+";
-            this.btnIncrease.UseVisualStyleBackColor = true;
-            // 
             // btnDecrease
             // 
             this.btnDecrease.Location = new System.Drawing.Point(388, 135);
@@ -157,7 +108,57 @@
             this.btnDecrease.UseVisualStyleBackColor = true;
             this.btnDecrease.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // btnIncrease
+            // 
+            this.btnIncrease.Location = new System.Drawing.Point(323, 135);
+            this.btnIncrease.Name = "btnIncrease";
+            this.btnIncrease.Size = new System.Drawing.Size(59, 29);
+            this.btnIncrease.TabIndex = 5;
+            this.btnIncrease.Text = "+";
+            this.btnIncrease.UseVisualStyleBackColor = true;
+            // 
+            // txtSessions
+            // 
+            this.txtSessions.Location = new System.Drawing.Point(158, 134);
+            this.txtSessions.Name = "txtSessions";
+            this.txtSessions.Size = new System.Drawing.Size(146, 29);
+            this.txtSessions.TabIndex = 4;
+            // 
+            // lblSessions
+            // 
+            this.lblSessions.AutoSize = true;
+            this.lblSessions.Location = new System.Drawing.Point(21, 124);
+            this.lblSessions.Name = "lblSessions";
+            this.lblSessions.Size = new System.Drawing.Size(109, 50);
+            this.lblSessions.TabIndex = 3;
+            this.lblSessions.Text = "Remaining \r\nSessions";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(341, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 39);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Change";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtPayment
+            // 
+            this.txtPayment.Location = new System.Drawing.Point(158, 45);
+            this.txtPayment.Name = "txtPayment";
+            this.txtPayment.Size = new System.Drawing.Size(168, 29);
+            this.txtPayment.TabIndex = 1;
+            // 
+            // lblPayment
+            // 
+            this.lblPayment.AutoSize = true;
+            this.lblPayment.Location = new System.Drawing.Point(21, 48);
+            this.lblPayment.Name = "lblPayment";
+            this.lblPayment.Size = new System.Drawing.Size(131, 25);
+            this.lblPayment.TabIndex = 0;
+            this.lblPayment.Text = "Last Payment";
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,7 +168,7 @@
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.lblStudents);
             this.Controls.Add(this.studentList);
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.Text = "Students\' class count";
             this.grpDetials.ResumeLayout(false);
             this.grpDetials.PerformLayout();
