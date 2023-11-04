@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
 
 public class StudentDatabase
 {
@@ -96,6 +97,30 @@ public class StudentDatabase
             command.Parameters.AddWithValue("@StudentID", studentId);
 
             command.ExecuteNonQuery();
+        }
+    }
+
+    // Method to retrieve a list of all students from the database and export to a text file
+    public void ExportStudentsToTextFile(string filePath)
+    {
+        List<Student> students = GetAllStudents();
+
+        if (students.Count == 0)
+        {
+            // Handle the case where there are no students to export
+            return;
+        }
+
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            foreach (Student student in students)
+            {
+                writer.WriteLine($"First Name: {student.FirstName}");
+                writer.WriteLine($"Last Name: {student.LastName}");
+                writer.WriteLine($"Payment Date: {student.Payment}");
+                writer.WriteLine($"Remaining Sessions: {student.Sessions}");
+                writer.WriteLine(); // Add a blank line to separate entries
+            }
         }
     }
 

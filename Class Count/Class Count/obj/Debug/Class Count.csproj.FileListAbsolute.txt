@@ -20,3 +20,12 @@ C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class
 C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.CoreCompileInputs.cache
 C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.exe
 C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.pdb
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.dll
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.dll
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.xml
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.xml
+C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.CopyComplete
