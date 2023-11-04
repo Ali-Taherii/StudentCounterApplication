@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Class_Count
 {
-    internal class Student
+    public class Student
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
