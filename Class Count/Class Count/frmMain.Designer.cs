@@ -185,6 +185,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain";
             this.Text = "Students\' class count";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.grpDetials.ResumeLayout(false);
             this.grpDetials.PerformLayout();
             this.ResumeLayout(false);

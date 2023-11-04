@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.IO;
 
-public class StudentDatabase
+public class StudentDatabase: IDisposable
 {
     private SQLiteConnection connection;
 
@@ -127,6 +127,10 @@ public class StudentDatabase
     // Dispose of the database connection when you're done with it
     public void Dispose()
     {
-        connection.Close();
+        if (connection != null)
+        {
+            connection.Close();
+            connection.Dispose();
+        }
     }
 }
