@@ -21,7 +21,8 @@ namespace Class_Count
         {
             try
             {
-                txtSessions.Text = (Convert.ToInt32(txtSessions.Text) - 1).ToString();
+                if (Convert.ToInt32(txtSessions.Text) > 0)
+                    txtSessions.Text = (Convert.ToInt32(txtSessions.Text) - 1).ToString();
             }
             catch
             {
