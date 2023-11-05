@@ -67,6 +67,11 @@ namespace Class_Count
                 }
             }
         }
+
+        private void studentList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnRemoveStudent.Enabled = true;
+        }
     }
 }
 

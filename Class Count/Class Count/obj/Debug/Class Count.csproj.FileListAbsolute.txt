@@ -29,3 +29,23 @@ C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class
 C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.xml
 C:\Users\alita\OneDrive\Desktop\Misc\Ali-Taherii\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.CopyComplete
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\Class Count.exe.config
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\Class Count.exe
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\Class Count.pdb
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.dll
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.dll
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.xml
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\bin\Debug\System.Data.SQLite.xml
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.AssemblyReference.cache
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class_Count.frmMain.resources
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class_Count.frmStudentDetails.resources
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class_Count.Properties.Resources.resources
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.GenerateResource.cache
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.CoreCompileInputs.cache
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.csproj.CopyComplete
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.exe
+C:\Users\alita\Desktop\StudentCounterApplication\Class Count\Class Count\obj\Debug\Class Count.pdb
