@@ -18,6 +18,25 @@ namespace Class_Count
             InitializeComponent();
         }
 
+        private void DataBind()
+        {
+            // Create an instance of the StudentDatabase class
+            using (StudentDatabase studentDB = new StudentDatabase())
+            {
+                // Retrieve a list of all students from the database
+                var students = studentDB.GetAllStudents();
+
+                // Clear the ListBox
+                studentList.Items.Clear();
+
+                // Populate the ListBox with student names
+                foreach (var student in students)
+                {
+                    studentList.Items.Add($"{student.FirstName} {student.LastName}");
+                }
+            }
+        }
+
         private void btnDecrease_Click(object sender, EventArgs e)
         {
             try
@@ -47,25 +66,12 @@ namespace Class_Count
         {
             frmStudentDetails frmStudentDetails = new frmStudentDetails();
             frmStudentDetails.ShowDialog();
+            this.DataBind();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            // Create an instance of the StudentDatabase class
-            using (StudentDatabase studentDB = new StudentDatabase())
-            {
-                // Retrieve a list of all students from the database
-                var students = studentDB.GetAllStudents();
-
-                // Clear the ListBox
-                studentList.Items.Clear();
-
-                // Populate the ListBox with student names
-                foreach (var student in students)
-                {
-                    studentList.Items.Add($"{student.FirstName} {student.LastName}");
-                }
-            }
+            this.DataBind();
         }
 
         private void studentList_SelectedIndexChanged(object sender, EventArgs e)

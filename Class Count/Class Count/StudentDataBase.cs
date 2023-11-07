@@ -38,6 +38,8 @@ public class StudentDatabase: IDisposable
 
             command.ExecuteNonQuery();
         }
+        this.ExportStudentsToTextFile("student.txt");
+
     }
 
     // Method to retrieve a list of all students from the database
@@ -85,6 +87,8 @@ public class StudentDatabase: IDisposable
 
             command.ExecuteNonQuery();
         }
+        this.ExportStudentsToTextFile("student.txt");
+
     }
 
     // Method to delete a student record by ID
@@ -98,6 +102,7 @@ public class StudentDatabase: IDisposable
 
             command.ExecuteNonQuery();
         }
+        this.ExportStudentsToTextFile("student.txt");
     }
 
     // Method to retrieve a list of all students from the database and export to a text file

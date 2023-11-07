@@ -31,11 +31,11 @@ namespace Class_Count
                 };
 
                 // Create an instance of the StudentDatabase
-                StudentDatabase studentDB = new StudentDatabase();
-                // Insert the new student into the database
-                studentDB.InsertStudent(student);
-                studentDB.Dispose();
-                
+                using (StudentDatabase studentDB = new StudentDatabase())
+                {
+                    // Insert the new student into the database
+                    studentDB.InsertStudent(student);
+                };
 
                 // Optionally, you can clear the input fields or display a confirmation message.
                 txtFirstname.Clear();

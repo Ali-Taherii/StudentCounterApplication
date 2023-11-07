@@ -46,30 +46,27 @@
             // studentList
             // 
             this.studentList.FormattingEnabled = true;
-            this.studentList.ItemHeight = 16;
-            this.studentList.Location = new System.Drawing.Point(34, 52);
-            this.studentList.Margin = new System.Windows.Forms.Padding(2);
+            this.studentList.ItemHeight = 24;
+            this.studentList.Location = new System.Drawing.Point(47, 78);
             this.studentList.Name = "studentList";
-            this.studentList.Size = new System.Drawing.Size(173, 148);
+            this.studentList.Size = new System.Drawing.Size(236, 220);
             this.studentList.TabIndex = 0;
             this.studentList.SelectedIndexChanged += new System.EventHandler(this.studentList_SelectedIndexChanged);
             // 
             // lblStudents
             // 
             this.lblStudents.AutoSize = true;
-            this.lblStudents.Location = new System.Drawing.Point(31, 31);
-            this.lblStudents.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStudents.Location = new System.Drawing.Point(43, 46);
             this.lblStudents.Name = "lblStudents";
-            this.lblStudents.Size = new System.Drawing.Size(59, 16);
+            this.lblStudents.Size = new System.Drawing.Size(90, 25);
             this.lblStudents.TabIndex = 1;
             this.lblStudents.Text = "Students";
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(34, 209);
-            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddStudent.Location = new System.Drawing.Point(47, 314);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(84, 27);
+            this.btnAddStudent.Size = new System.Drawing.Size(116, 40);
             this.btnAddStudent.TabIndex = 2;
             this.btnAddStudent.Text = "Add";
             this.btnAddStudent.UseVisualStyleBackColor = true;
@@ -78,10 +75,9 @@
             // btnRemoveStudent
             // 
             this.btnRemoveStudent.Enabled = false;
-            this.btnRemoveStudent.Location = new System.Drawing.Point(122, 209);
-            this.btnRemoveStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveStudent.Location = new System.Drawing.Point(168, 314);
             this.btnRemoveStudent.Name = "btnRemoveStudent";
-            this.btnRemoveStudent.Size = new System.Drawing.Size(84, 27);
+            this.btnRemoveStudent.Size = new System.Drawing.Size(116, 40);
             this.btnRemoveStudent.TabIndex = 3;
             this.btnRemoveStudent.Text = "Remove";
             this.btnRemoveStudent.UseVisualStyleBackColor = true;
@@ -95,95 +91,87 @@
             this.grpDetials.Controls.Add(this.btnChange);
             this.grpDetials.Controls.Add(this.txtPayment);
             this.grpDetials.Controls.Add(this.lblPayment);
-            this.grpDetials.Location = new System.Drawing.Point(225, 52);
-            this.grpDetials.Margin = new System.Windows.Forms.Padding(2);
+            this.grpDetials.Location = new System.Drawing.Point(309, 78);
             this.grpDetials.Name = "grpDetials";
-            this.grpDetials.Padding = new System.Windows.Forms.Padding(2);
-            this.grpDetials.Size = new System.Drawing.Size(347, 147);
+            this.grpDetials.Size = new System.Drawing.Size(477, 220);
             this.grpDetials.TabIndex = 4;
             this.grpDetials.TabStop = false;
             this.grpDetials.Text = "Details";
             // 
             // btnDecrease
             // 
-            this.btnDecrease.Location = new System.Drawing.Point(282, 90);
-            this.btnDecrease.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDecrease.Location = new System.Drawing.Point(388, 135);
             this.btnDecrease.Name = "btnDecrease";
-            this.btnDecrease.Size = new System.Drawing.Size(43, 19);
+            this.btnDecrease.Size = new System.Drawing.Size(59, 39);
             this.btnDecrease.TabIndex = 6;
             this.btnDecrease.Text = "-";
+            this.btnDecrease.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDecrease.UseVisualStyleBackColor = true;
             this.btnDecrease.Click += new System.EventHandler(this.btnDecrease_Click);
             // 
             // btnIncrease
             // 
-            this.btnIncrease.Location = new System.Drawing.Point(235, 90);
-            this.btnIncrease.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIncrease.Location = new System.Drawing.Point(323, 135);
             this.btnIncrease.Name = "btnIncrease";
-            this.btnIncrease.Size = new System.Drawing.Size(43, 19);
+            this.btnIncrease.Size = new System.Drawing.Size(59, 39);
             this.btnIncrease.TabIndex = 5;
             this.btnIncrease.Text = "+";
+            this.btnIncrease.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnIncrease.UseVisualStyleBackColor = true;
             this.btnIncrease.Click += new System.EventHandler(this.btnIncrease_Click);
             // 
             // txtSessions
             // 
-            this.txtSessions.Location = new System.Drawing.Point(115, 89);
-            this.txtSessions.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSessions.Location = new System.Drawing.Point(158, 134);
             this.txtSessions.Name = "txtSessions";
-            this.txtSessions.Size = new System.Drawing.Size(107, 22);
+            this.txtSessions.Size = new System.Drawing.Size(146, 29);
             this.txtSessions.TabIndex = 4;
             this.txtSessions.Text = "0";
             // 
             // lblSessions
             // 
             this.lblSessions.AutoSize = true;
-            this.lblSessions.Location = new System.Drawing.Point(15, 83);
-            this.lblSessions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSessions.Location = new System.Drawing.Point(21, 124);
             this.lblSessions.Name = "lblSessions";
-            this.lblSessions.Size = new System.Drawing.Size(75, 32);
+            this.lblSessions.Size = new System.Drawing.Size(109, 50);
             this.lblSessions.TabIndex = 3;
             this.lblSessions.Text = "Remaining \r\nSessions";
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(248, 27);
-            this.btnChange.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChange.Location = new System.Drawing.Point(341, 40);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(77, 26);
+            this.btnChange.Size = new System.Drawing.Size(106, 39);
             this.btnChange.TabIndex = 2;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = true;
             // 
             // txtPayment
             // 
-            this.txtPayment.Location = new System.Drawing.Point(115, 30);
-            this.txtPayment.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPayment.Location = new System.Drawing.Point(158, 45);
             this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(123, 22);
+            this.txtPayment.Size = new System.Drawing.Size(168, 29);
             this.txtPayment.TabIndex = 1;
             // 
             // lblPayment
             // 
             this.lblPayment.AutoSize = true;
-            this.lblPayment.Location = new System.Drawing.Point(15, 32);
-            this.lblPayment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPayment.Location = new System.Drawing.Point(21, 48);
             this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Size = new System.Drawing.Size(88, 16);
+            this.lblPayment.Size = new System.Drawing.Size(131, 25);
             this.lblPayment.TabIndex = 0;
             this.lblPayment.Text = "Last Payment";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 251);
+            this.ClientSize = new System.Drawing.Size(836, 376);
             this.Controls.Add(this.grpDetials);
             this.Controls.Add(this.btnRemoveStudent);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.lblStudents);
             this.Controls.Add(this.studentList);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Text = "Students\' class count";
             this.Load += new System.EventHandler(this.frmMain_Load);
