@@ -112,14 +112,16 @@ public class StudentDatabase: IDisposable
     {
         List<Student> students = GetAllStudents();
 
-        if (students.Count == 0)
-        {
-            // Handle the case where there are no students to export
-            return;
-        }
+
 
         using (StreamWriter writer = new StreamWriter(filePath))
         {
+            if (students.Count == 0)
+            {
+                // Handle the case where there are no students to export
+                writer.WriteLine("No students to show!");
+                return;
+            }
             foreach (Student student in students)
             {
                 writer.WriteLine($"ID:  { student.Id}");
