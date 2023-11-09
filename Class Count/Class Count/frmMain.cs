@@ -78,6 +78,25 @@ namespace Class_Count
         {
             btnRemoveStudent.Enabled = true;
         }
+
+        private void btnRemoveStudent_Click(object sender, EventArgs e)
+        {
+            string stu = studentList.SelectedItem.ToString();
+
+            using (StudentDatabase studentDatabase = new StudentDatabase())
+            {
+                foreach (Student student in studentDatabase.GetAllStudents())
+                {
+                    String fullName = student.FirstName + " " + student.LastName;
+                    if (fullName == stu)
+                    {
+                        studentDatabase.DeleteStudent(student.Id); ;
+                        DataBind();
+                    }
+                }
+            }
+            
+        }
     }
 }
 

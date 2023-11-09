@@ -17,7 +17,7 @@ public class StudentDatabase: IDisposable
 
         // Create a table to store students if it doesn't exist
         string createTableQuery = "CREATE TABLE IF NOT EXISTS Students " +
-            "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FirstName TEXT, LastName TEXT, Payment DATETIME, Sessions INTEGER)";
+            "(Id INTEGER PRIMARY KEY, FirstName TEXT, LastName TEXT, Payment DATETIME, Sessions INTEGER)";
 
         SQLiteCommand command = new SQLiteCommand(createTableQuery, connection);
         command.ExecuteNonQuery();
@@ -26,11 +26,12 @@ public class StudentDatabase: IDisposable
     // Method to insert a new student record
     public void InsertStudent(Student student)
     {
-        string insertQuery = "INSERT INTO Students (FirstName, LastName, Payment, Sessions) " +
-            "VALUES (@FirstName, @LastName, @Payment, @Sessions)";
+        string insertQuery = "INSERT INTO Students (Id, FirstName, LastName, Payment, Sessions) " +
+            "VALUES (@Id, @FirstName, @LastName, @Payment, @Sessions)";
 
         using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
         {
+            command.Parameters.AddWithValue("@Id", student.Id);
             command.Parameters.AddWithValue("@FirstName", student.FirstName);
             command.Parameters.AddWithValue("@LastName", student.LastName);
             command.Parameters.AddWithValue("@Payment", student.Payment);
@@ -57,6 +58,7 @@ public class StudentDatabase: IDisposable
                 {
                     Student student = new Student
                     {
+                        Id = int.Parse(reader["Id"].ToString()),
                         FirstName = reader["FirstName"].ToString(),
                         LastName = reader["LastName"].ToString(),
                         Payment = DateTime.Parse(reader["Payment"].ToString()),
@@ -75,7 +77,7 @@ public class StudentDatabase: IDisposable
     {
         string updateQuery = "UPDATE Students " +
             "SET FirstName = @FirstName, LastName = @LastName, Payment = @Payment, Sessions = @Sessions " +
-            "WHERE ID = @StudentID";
+            "WHERE Id = @StudentID";
 
         using (SQLiteCommand command = new SQLiteCommand(updateQuery, connection))
         {
@@ -94,7 +96,7 @@ public class StudentDatabase: IDisposable
     // Method to delete a student record by ID
     public void DeleteStudent(int studentId)
     {
-        string deleteQuery = "DELETE FROM Students WHERE ID = @StudentID";
+        string deleteQuery = "DELETE FROM Students WHERE Id = @StudentID";
 
         using (SQLiteCommand command = new SQLiteCommand(deleteQuery, connection))
         {
@@ -120,6 +122,7 @@ public class StudentDatabase: IDisposable
         {
             foreach (Student student in students)
             {
+                writer.WriteLine($"ID:  { student.Id}");
                 writer.WriteLine($"First Name: {student.FirstName}");
                 writer.WriteLine($"Last Name: {student.LastName}");
                 writer.WriteLine($"Payment Date: {student.Payment}");

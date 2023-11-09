@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,9 +22,19 @@ namespace Class_Count
         {
             if (txtFirstname.Text.Length != 0 && txtLastname.Text.Length != 0 && numSessions.Value > 0)
             {
+                // Generate a unique ID
+                Guid uniqueId = Guid.NewGuid();
+
+                // Convert the Guid to an integer (32 bits)
+                int uniqueInt = uniqueId.GetHashCode();
+
+                // Ensure the integer is non-negative
+                uniqueInt = Math.Abs(uniqueInt);
+
                 // Create a Student object with the entered data
                 Student student = new Student()
                 {
+                    Id = uniqueInt,
                     FirstName = txtFirstname.Text,
                     LastName = txtLastname.Text,
                     Payment = dateTimePicker1.Value,

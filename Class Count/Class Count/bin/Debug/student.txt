@@ -1,20 +1,6 @@
+ID:  1
 First Name: Ali
 Last Name: Taheri
 Payment Date: 11/4/2023 6:47:56 PM
 Remaining Sessions: 4
-
-First Name: ali
-Last Name: taheri
-Payment Date: 11/4/2023 6:49:01 PM
-Remaining Sessions: 5
-
-First Name: ali
-Last Name: taehri
-Payment Date: 11/4/2023 6:50:18 PM
-Remaining Sessions: 5
-
-First Name: Bahar
-Last Name: Taheri
-Payment Date: 11/7/2023 2:32:20 PM
-Remaining Sessions: 5
 
