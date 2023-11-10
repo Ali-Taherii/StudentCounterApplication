@@ -35,6 +35,9 @@ namespace Class_Count
                     studentList.Items.Add($"{student.FirstName} {student.LastName}");
                 }
             }
+
+            txtPayment.Text = string.Empty;
+            txtSessions.Text = string.Empty;
         }
 
         private void btnDecrease_Click(object sender, EventArgs e)
@@ -77,11 +80,23 @@ namespace Class_Count
         private void studentList_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnRemoveStudent.Enabled = true;
+            
+            using (StudentDatabase studentDatabase = new StudentDatabase())
+            {
+                int selectedID = studentDatabase.findStudentId(studentList.Text);
+                Student selectedStudent = studentDatabase.findStudent(selectedID);
+
+                if (selectedStudent != null)
+                {
+                    txtPayment.Text = selectedStudent.Payment.ToString("yy / MMM / dd");
+                    txtSessions.Text = selectedStudent.Sessions.ToString();
+                }
+            }
         }
 
         private void btnRemoveStudent_Click(object sender, EventArgs e)
         {
-            string stu = studentList.SelectedItem.ToString();
+            string stu = studentList.Text;
 
             using (StudentDatabase studentDatabase = new StudentDatabase())
             {

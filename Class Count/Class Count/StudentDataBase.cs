@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.IO;
 
-public class StudentDatabase: IDisposable
+public class StudentDatabase : IDisposable
 {
     private SQLiteConnection connection;
 
@@ -122,6 +122,14 @@ public class StudentDatabase: IDisposable
         return 0;
     }
 
+    // Method to retrieve one student from the database based on the ID
+    public Student findStudent(int id)
+    {
+        foreach (Student student in this.GetAllStudents())
+        { if (student.getId() == id) return student; }
+        return null;
+    }
+
     // Method to retrieve a list of all students from the database and export to a text file
     public void ExportStudentsToTextFile(string filePath)
     {
@@ -139,7 +147,7 @@ public class StudentDatabase: IDisposable
             }
             foreach (Student student in students)
             {
-                writer.WriteLine($"ID:  { student.getId()}");
+                writer.WriteLine($"ID:  {student.getId()}");
                 writer.WriteLine($"First Name: {student.FirstName}");
                 writer.WriteLine($"Last Name: {student.LastName}");
                 writer.WriteLine($"Payment Date: {student.Payment}");
