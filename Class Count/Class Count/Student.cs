@@ -37,9 +37,7 @@ namespace Class_Count
         { this.Id = id; }
 
         public int getId()
-        {
-            return Id;
-        }
+        { return Id; }
     }
-    
+
 }

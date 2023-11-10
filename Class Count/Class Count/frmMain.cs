@@ -85,17 +85,13 @@ namespace Class_Count
 
             using (StudentDatabase studentDatabase = new StudentDatabase())
             {
-                foreach (Student student in studentDatabase.GetAllStudents())
+                if (studentDatabase.findStudentId(stu) != 0)
                 {
-                    String fullName = student.FirstName + " " + student.LastName;
-                    if (fullName == stu)
-                    {
-                        studentDatabase.DeleteStudent(student.getId()); ;
-                        DataBind();
-                    }
+                    studentDatabase.DeleteStudent(studentDatabase.findStudentId(stu));
+                    DataBind();
                 }
             }
-            
+
         }
     }
 }
