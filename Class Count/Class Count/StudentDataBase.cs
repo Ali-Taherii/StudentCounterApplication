@@ -31,7 +31,7 @@ public class StudentDatabase: IDisposable
 
         using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
         {
-            command.Parameters.AddWithValue("@Id", student.Id);
+            command.Parameters.AddWithValue("@Id", student.getId());
             command.Parameters.AddWithValue("@FirstName", student.FirstName);
             command.Parameters.AddWithValue("@LastName", student.LastName);
             command.Parameters.AddWithValue("@Payment", student.Payment);
@@ -58,12 +58,13 @@ public class StudentDatabase: IDisposable
                 {
                     Student student = new Student
                     {
-                        Id = int.Parse(reader["Id"].ToString()),
                         FirstName = reader["FirstName"].ToString(),
                         LastName = reader["LastName"].ToString(),
                         Payment = DateTime.Parse(reader["Payment"].ToString()),
                         Sessions = int.Parse(reader["Sessions"].ToString())
                     };
+                    student.SetId(int.Parse(reader["Id"].ToString()));
+
                     students.Add(student);
                 }
             }
@@ -124,7 +125,7 @@ public class StudentDatabase: IDisposable
             }
             foreach (Student student in students)
             {
-                writer.WriteLine($"ID:  { student.Id}");
+                writer.WriteLine($"ID:  { student.getId()}");
                 writer.WriteLine($"First Name: {student.FirstName}");
                 writer.WriteLine($"Last Name: {student.LastName}");
                 writer.WriteLine($"Payment Date: {student.Payment}");

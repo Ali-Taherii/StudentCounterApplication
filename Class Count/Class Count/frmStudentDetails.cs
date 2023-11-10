@@ -22,24 +22,16 @@ namespace Class_Count
         {
             if (txtFirstname.Text.Length != 0 && txtLastname.Text.Length != 0 && numSessions.Value > 0)
             {
-                // Generate a unique ID
-                Guid uniqueId = Guid.NewGuid();
-
-                // Convert the Guid to an integer (32 bits)
-                int uniqueInt = uniqueId.GetHashCode();
-
-                // Ensure the integer is non-negative
-                uniqueInt = Math.Abs(uniqueInt);
 
                 // Create a Student object with the entered data
                 Student student = new Student()
                 {
-                    Id = uniqueInt,
                     FirstName = txtFirstname.Text,
                     LastName = txtLastname.Text,
                     Payment = dateTimePicker1.Value,
                     Sessions = Convert.ToInt32(numSessions.Value)
                 };
+                student.SetId();
 
                 // Create an instance of the StudentDatabase
                 using (StudentDatabase studentDB = new StudentDatabase())

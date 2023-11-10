@@ -90,7 +90,7 @@ namespace Class_Count
                     String fullName = student.FirstName + " " + student.LastName;
                     if (fullName == stu)
                     {
-                        studentDatabase.DeleteStudent(student.Id); ;
+                        studentDatabase.DeleteStudent(student.getId()); ;
                         DataBind();
                     }
                 }
