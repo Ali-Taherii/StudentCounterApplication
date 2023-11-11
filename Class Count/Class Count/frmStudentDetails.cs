@@ -54,5 +54,9 @@ namespace Class_Count
             }
         }
 
+        private void numSessions_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

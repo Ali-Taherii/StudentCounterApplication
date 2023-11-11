@@ -108,7 +108,7 @@ public class StudentDatabase : IDisposable
         this.ExportStudentsToTextFile("student.txt");
     }
 
-    // Method to retrive one student's ID from the database based on the name
+    // Method to retrieve one student's ID from the database based on the name
     public int findStudentId(string name)
     {
         foreach (Student student in this.GetAllStudents())

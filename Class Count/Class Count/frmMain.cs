@@ -42,26 +42,50 @@ namespace Class_Count
 
         private void btnDecrease_Click(object sender, EventArgs e)
         {
-            try
+            using (StudentDatabase studentDatabase = new StudentDatabase())
             {
-                if (Convert.ToInt32(txtSessions.Text) > 0)
-                    txtSessions.Text = (Convert.ToInt32(txtSessions.Text) - 1).ToString();
-            }
-            catch
-            {
-                MessageBox.Show("The format is not correct");
+                // Create the student to be updated
+                int selectedID = studentDatabase.findStudentId(studentList.Text);
+                Student selectedStudent = studentDatabase.findStudent(selectedID);
+                try
+                {
+                    int sessions = Convert.ToInt32(txtSessions.Text);
+                    if (sessions > 0)
+                        sessions--;
+                    txtSessions.Text = sessions.ToString();
+                    selectedStudent.Sessions = sessions;
+                    studentDatabase.UpdateStudent(selectedID, selectedStudent);
+
+                }
+                catch
+                {
+                    MessageBox.Show("The format is not correct");
+                }
+
             }
         }
 
         private void btnIncrease_Click(object sender, EventArgs e)
         {
-            try
+            using (StudentDatabase studentDatabase = new StudentDatabase())
             {
-                txtSessions.Text = (Convert.ToInt32(txtSessions.Text) + 1).ToString();
-            }
-            catch
-            {
-                MessageBox.Show("The format is not correct");
+                // Create the student to be updated
+                int selectedID = studentDatabase.findStudentId(studentList.Text);
+                Student selectedStudent = studentDatabase.findStudent(selectedID);
+                try
+                {
+                    int sessions = Convert.ToInt32(txtSessions.Text);
+                    sessions++;
+                    txtSessions.Text = sessions.ToString();
+                    selectedStudent.Sessions = sessions;
+                    studentDatabase.UpdateStudent(selectedID, selectedStudent);
+
+                }
+                catch
+                {
+                    MessageBox.Show("The format is not correct");
+                }
+
             }
         }
 
@@ -80,7 +104,7 @@ namespace Class_Count
         private void studentList_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnRemoveStudent.Enabled = true;
-            
+
             using (StudentDatabase studentDatabase = new StudentDatabase())
             {
                 int selectedID = studentDatabase.findStudentId(studentList.Text);
