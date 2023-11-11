@@ -10,34 +10,39 @@ namespace Class_Count
 {
     public class Student
     {
-        protected int Id;
+        // Private field for ID
+        private int _id;
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Payment { get; set; }
         public int Sessions { get; set; }
 
-
-        public void SetId()
+        // Property for accessing ID (read-only)
+        public int Id
         {
-            // Generate a unique ID
-            Guid uniqueId = Guid.NewGuid();
-
-            // Convert the Guid to an integer (32 bits)
-            int uniqueInt = uniqueId.GetHashCode();
-
-            // Ensure the integer is non-negative
-            uniqueInt = Math.Abs(uniqueInt);
-
-
-            Id = uniqueInt;
-
+            get { return _id; }
         }
 
-        public void SetId(int id)
-        { this.Id = id; }
+        // Constructor to initialize a student with a provided ID
+        public Student(int id)
+        {
+            _id = id;
+        }
 
-        public int getId()
-        { return Id; }
+        // Default constructor generates a unique ID
+        public Student()
+        {
+            GenerateUniqueId();
+        }
+
+        // Private method to generate a unique ID
+        private void GenerateUniqueId()
+        {
+            Guid uniqueId = Guid.NewGuid();
+            int uniqueInt = uniqueId.GetHashCode();
+            _id = Math.Abs(uniqueInt);
+        }
     }
-
 }
+

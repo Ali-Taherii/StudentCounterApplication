@@ -13,27 +13,26 @@ namespace Class_Count
 {
     public partial class frmMain : Form
     {
+        private readonly StudentDatabase studentDB;
         public frmMain()
         {
             InitializeComponent();
+            studentDB = new StudentDatabase();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            this.DataBind();
         }
 
         private void DataBind()
         {
-            // Create an instance of the StudentDatabase class
-            using (StudentDatabase studentDB = new StudentDatabase())
+            var students = studentDB.GetAllStudents();
+            studentList.Items.Clear();
+
+            foreach (var student in students)
             {
-                // Retrieve a list of all students from the database
-                var students = studentDB.GetAllStudents();
-
-                // Clear the ListBox
-                studentList.Items.Clear();
-
-                // Populate the ListBox with student names
-                foreach (var student in students)
-                {
-                    studentList.Items.Add($"{student.FirstName} {student.LastName}");
-                }
+                studentList.Items.Add($"{student.FirstName} {student.LastName}");
             }
 
             txtPayment.Text = string.Empty;
@@ -42,50 +41,43 @@ namespace Class_Count
 
         private void btnDecrease_Click(object sender, EventArgs e)
         {
-            using (StudentDatabase studentDatabase = new StudentDatabase())
+            // Create the student to be updated
+            int selectedID = studentDB.findStudentId(studentList.Text);
+            Student selectedStudent = studentDB.findStudent(selectedID);
+            try
             {
-                // Create the student to be updated
-                int selectedID = studentDatabase.findStudentId(studentList.Text);
-                Student selectedStudent = studentDatabase.findStudent(selectedID);
-                try
-                {
-                    int sessions = Convert.ToInt32(txtSessions.Text);
-                    if (sessions > 0)
-                        sessions--;
-                    txtSessions.Text = sessions.ToString();
-                    selectedStudent.Sessions = sessions;
-                    studentDatabase.UpdateStudent(selectedID, selectedStudent);
+                int sessions = Convert.ToInt32(txtSessions.Text);
+                if (sessions > 0)
+                    sessions--;
+                txtSessions.Text = sessions.ToString();
+                selectedStudent.Sessions = sessions;
+                studentDB.UpdateStudent(selectedID, selectedStudent);
+                studentDB.UpdateStudent(selectedID, selectedStudent);
 
-                }
-                catch
-                {
-                    MessageBox.Show("The format is not correct");
-                }
-
+            }
+            catch
+            {
+                MessageBox.Show("The format is not correct");
             }
         }
 
         private void btnIncrease_Click(object sender, EventArgs e)
         {
-            using (StudentDatabase studentDatabase = new StudentDatabase())
+            // Create the student to be updated
+            int selectedID = studentDB.findStudentId(studentList.Text);
+            Student selectedStudent = studentDB.findStudent(selectedID);
+            try
             {
-                // Create the student to be updated
-                int selectedID = studentDatabase.findStudentId(studentList.Text);
-                Student selectedStudent = studentDatabase.findStudent(selectedID);
-                try
-                {
-                    int sessions = Convert.ToInt32(txtSessions.Text);
-                    sessions++;
-                    txtSessions.Text = sessions.ToString();
-                    selectedStudent.Sessions = sessions;
-                    studentDatabase.UpdateStudent(selectedID, selectedStudent);
+                int sessions = Convert.ToInt32(txtSessions.Text);
+                sessions++;
+                txtSessions.Text = sessions.ToString();
+                selectedStudent.Sessions = sessions;
+                studentDB.UpdateStudent(selectedID, selectedStudent);
 
-                }
-                catch
-                {
-                    MessageBox.Show("The format is not correct");
-                }
-
+            }
+            catch
+            {
+                MessageBox.Show("The format is not correct");
             }
         }
 
@@ -96,41 +88,29 @@ namespace Class_Count
             this.DataBind();
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            this.DataBind();
-        }
-
         private void studentList_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnRemoveStudent.Enabled = true;
 
-            using (StudentDatabase studentDatabase = new StudentDatabase())
-            {
-                int selectedID = studentDatabase.findStudentId(studentList.Text);
-                Student selectedStudent = studentDatabase.findStudent(selectedID);
+            int selectedID = studentDB.findStudentId(studentList.Text);
+            Student selectedStudent = studentDB.findStudent(selectedID);
 
-                if (selectedStudent != null)
-                {
-                    txtPayment.Text = selectedStudent.Payment.ToString("yy / MMM / dd");
-                    txtSessions.Text = selectedStudent.Sessions.ToString();
-                }
+            if (selectedStudent != null)
+            {
+                txtPayment.Text = selectedStudent.Payment.ToString("yy / MMM / dd");
+                txtSessions.Text = selectedStudent.Sessions.ToString();
             }
+
         }
 
         private void btnRemoveStudent_Click(object sender, EventArgs e)
         {
             string stu = studentList.Text;
-
-            using (StudentDatabase studentDatabase = new StudentDatabase())
+            if (studentDB.findStudentId(stu) != 0)
             {
-                if (studentDatabase.findStudentId(stu) != 0)
-                {
-                    studentDatabase.DeleteStudent(studentDatabase.findStudentId(stu));
-                    DataBind();
-                }
+                studentDB.DeleteStudent(studentDB.findStudentId(stu));
+                DataBind();
             }
-
         }
     }
 }

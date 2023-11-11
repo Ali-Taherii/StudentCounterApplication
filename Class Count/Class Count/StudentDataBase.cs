@@ -31,7 +31,7 @@ public class StudentDatabase : IDisposable
 
         using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
         {
-            command.Parameters.AddWithValue("@Id", student.getId());
+            command.Parameters.AddWithValue("@Id", student.Id);
             command.Parameters.AddWithValue("@FirstName", student.FirstName);
             command.Parameters.AddWithValue("@LastName", student.LastName);
             command.Parameters.AddWithValue("@Payment", student.Payment);
@@ -56,14 +56,14 @@ public class StudentDatabase : IDisposable
             {
                 while (reader.Read())
                 {
-                    Student student = new Student
+                    int studentId = Convert.ToInt32(reader["Id"]);
+                    Student student = new Student(studentId)
                     {
                         FirstName = reader["FirstName"].ToString(),
                         LastName = reader["LastName"].ToString(),
                         Payment = DateTime.Parse(reader["Payment"].ToString()),
                         Sessions = int.Parse(reader["Sessions"].ToString())
                     };
-                    student.SetId(int.Parse(reader["Id"].ToString()));
 
                     students.Add(student);
                 }
@@ -116,7 +116,7 @@ public class StudentDatabase : IDisposable
             string fullName = student.FirstName + " " + student.LastName;
             if (fullName == name)
             {
-                return student.getId();
+                return student.Id;
             }
         }
         return 0;
@@ -126,7 +126,7 @@ public class StudentDatabase : IDisposable
     public Student findStudent(int id)
     {
         foreach (Student student in this.GetAllStudents())
-        { if (student.getId() == id) return student; }
+        { if (student.Id == id) return student; }
         return null;
     }
 
@@ -135,25 +135,32 @@ public class StudentDatabase : IDisposable
     {
         List<Student> students = GetAllStudents();
 
-
-
-        using (StreamWriter writer = new StreamWriter(filePath))
+        try
         {
-            if (students.Count == 0)
+            using (StreamWriter writer = new StreamWriter(filePath))
             {
-                // Handle the case where there are no students to export
-                writer.WriteLine("No students to show!");
-                return;
+                if (students.Count == 0)
+                {
+                    writer.WriteLine("No students to show!");
+                }
+                else
+                {
+                    foreach (Student student in students)
+                    {
+                        writer.WriteLine($"ID:  {student.Id}");
+                        writer.WriteLine($"First Name: {student.FirstName}");
+                        writer.WriteLine($"Last Name: {student.LastName}");
+                        writer.WriteLine($"Payment Date: {student.Payment}");
+                        writer.WriteLine($"Remaining Sessions: {student.Sessions}");
+                        writer.WriteLine();
+                    }
+                }
             }
-            foreach (Student student in students)
-            {
-                writer.WriteLine($"ID:  {student.getId()}");
-                writer.WriteLine($"First Name: {student.FirstName}");
-                writer.WriteLine($"Last Name: {student.LastName}");
-                writer.WriteLine($"Payment Date: {student.Payment}");
-                writer.WriteLine($"Remaining Sessions: {student.Sessions}");
-                writer.WriteLine(); // Add a blank line to separate entries
-            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error exporting to file: " + ex.Message);
+            // Handle the error as needed
         }
     }
 
@@ -162,8 +169,16 @@ public class StudentDatabase : IDisposable
     {
         if (connection != null)
         {
-            connection.Close();
-            connection.Dispose();
+            try
+            {
+                connection.Close();
+                connection.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error disposing the connection: " + ex.Message);
+                // Handle the error as needed
+            }
         }
     }
 }

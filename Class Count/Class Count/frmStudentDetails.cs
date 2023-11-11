@@ -31,7 +31,6 @@ namespace Class_Count
                     Payment = dateTimePicker1.Value,
                     Sessions = Convert.ToInt32(numSessions.Value)
                 };
-                student.SetId();
 
                 // Create an instance of the StudentDatabase
                 using (StudentDatabase studentDB = new StudentDatabase())
@@ -52,11 +51,6 @@ namespace Class_Count
             {
                 MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void numSessions_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
